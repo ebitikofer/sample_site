@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.template import loader
 from .models import Link
 from .models import File
 
@@ -11,5 +12,9 @@ def index(request):
 
 def detail(request, fid):
     file = File.objects.get(id=fid)
-    html = file.title + '<br>' + file.author + '<br>' + file.location + '<br>' + file.rating + '<br>' + file.type + '<br><br>' + file.description + '<br>'
-    return HttpResponse(html)
+    template = loader.get_template('register/project.html')
+    context = {
+        'file': file,
+    }
+    #html = file.title + '<br>' + file.author + '<br>' + file.location + '<br>' + file.rating + '<br>' + file.type + '<br><br>' + file.description + '<br>'
+    return HttpResponse(template.render(context, request))

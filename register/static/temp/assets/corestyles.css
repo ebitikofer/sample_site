@@ -1,0 +1,32 @@
+﻿body {
+    background-color: silver;
+}
+
+header {
+}
+
+header ul {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    max-width: 65%;
+    margin: auto;
+    white-space: nowrap;
+}
+
+header li {
+    padding: 5px 3px 5px 3px;
+    border: 3px solid black;
+    display: inline;
+    list-style: none;
+}
+
+h1 {
+    max-width: 50%;
+    margin: auto;
+}
+
+img {
+    width: 500px;
+    margin: auto;
+    align-content: center;
+}
